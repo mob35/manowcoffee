@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { MytabsPage } from '../pages/mytabs/mytabs';
 import { ProductPage } from '../pages/product/product';
 import { CartPage } from '../pages/cart/cart';
+import { ProductDetailPage } from "../pages/product-detail/product-detail";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CartPage } from '../pages/cart/cart';
     HomePage,
     MytabsPage,
     ProductPage,
-    CartPage
+    CartPage,
+    ProductDetailPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { CartPage } from '../pages/cart/cart';
     HomePage,
     MytabsPage,
     ProductPage,
-    CartPage
+    CartPage,
+    ProductDetailPage
   ],
   providers: [
     StatusBar,
