@@ -22,5 +22,7 @@ export class ProductDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductDetailPage');
   }
-
+  gotoListProduct() {
+    this.navCtrl.pop();
+  }
 }
