@@ -10,6 +10,7 @@ import { MytabsPage } from '../pages/mytabs/mytabs';
 import { ProductPage } from '../pages/product/product';
 import { CartPage } from '../pages/cart/cart';
 import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-segment-order';
+import { IonSegmentComponent } from '../components/ion-segment/ion-segment';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-se
     MytabsPage,
     ProductPage,
     CartPage,
-    IonSegmentOrderComponent
+    IonSegmentOrderComponent,
+    IonSegmentComponent
     
   ],
   imports: [
