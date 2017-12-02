@@ -1,2 +1,4 @@
 # manowcoffee
 manowcoffee
+
+npm install
