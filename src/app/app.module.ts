@@ -11,8 +11,8 @@ import { ProductPage } from '../pages/product/product';
 import { CartPage } from '../pages/cart/cart';
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
 import { ProductServiceProvider } from '../providers/product-service/product-service';
-import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-segment-order';
-
+import { IonProductListComponent } from '../components/ion-product-list/ion-product-list';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,12 +22,16 @@ import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-se
     ProductPage,
     CartPage,
     ProductDetailPage,
-    IonSegmentOrderComponent
+    IonProductListComponent
     
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp,{
+      SegmentButton:'segment',
+      mode: 'md'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,7 +46,8 @@ import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-se
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ProductServiceProvider
+    ProductServiceProvider,
+    
   ]
 })
 export class AppModule { }

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { IonSegmentOrderComponent } from './ion-segment-order/ion-segment-order';
+import { IonProductListComponent } from './ion-product-list/ion-product-list';
 @NgModule({
-	declarations: [IonSegmentOrderComponent],
-	imports: [],
-	exports: [IonSegmentOrderComponent]
+    declarations: [
+        IonProductListComponent],
+    imports: [],
+    exports: [
+        IonProductListComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
