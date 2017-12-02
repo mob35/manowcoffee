@@ -11,6 +11,8 @@ import { ProductPage } from '../pages/product/product';
 import { CartPage } from '../pages/cart/cart';
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
 import { ProductServiceProvider } from '../providers/product-service/product-service';
+import { IonSegmentOrderComponent } from '../components/ion-segment-order/ion-segment-order';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ProductServiceProvider } from '../providers/product-service/product-ser
     MytabsPage,
     ProductPage,
     CartPage,
-    ProductDetailPage
+    ProductDetailPage,
+    IonSegmentOrderComponent
+    
   ],
   imports: [
     BrowserModule,
