@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the IonSegmentComponent component.
@@ -11,12 +11,10 @@ import { Component } from '@angular/core';
   templateUrl: 'ion-segment.html'
 })
 export class IonSegmentComponent {
-
-  text: string;
-
+  @Input() channel: any;
+  @Input() steps:Array<any>;
   constructor() {
     console.log('Hello IonSegmentComponent Component');
-    this.text = 'Hello World';
   }
 
 }

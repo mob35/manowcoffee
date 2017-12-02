@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
+import { ProductModel } from '../product/product.model';
 
 /**
  * Generated class for the ProductPage page.
@@ -14,8 +15,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'product.html',
 })
 export class ProductPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  product: ProductModel = new ProductModel();
+  channel: number;
+  steps: Array<any> = [
+    {
+      value: 1,
+      title: "Hot"
+    },
+    {
+      value: 2,
+      title: "Iced"
+    },
+    {
+      value: 3,
+      title: "Frappe"
+    }
+  ];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public app: App,
+    public events: Events
+  ) {
+    this.channel = 1;
   }
 
   ionViewDidLoad() {

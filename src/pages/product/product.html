@@ -7,12 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>product</ion-title>
+    <ion-title>Product</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-segment [(ngModel)]="cost">
+    <ion-segment-button value="hot">
+      Hot
+    </ion-segment-button>
+    <ion-segment-button value="iced">
+      Iced
+    </ion-segment-button>
+    <ion-segment-button value="frappe">
+      Frappe
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="cost">
+    <div *ngSwitchCase="'hot'">
+      <ion-product-list [items]="product.hot" (itemClicked)="selectRate($event)"></ion-product-list>
+    </div>
+    <div *ngSwitchCase="'iced'">
+      <ion-product-list [items]="product.iced" (itemClicked)="selectRate($event)"></ion-product-list>
+    </div>
+    <div *ngSwitchCase="'frappe'">
+      <ion-product-list [items]="product.frappe" (itemClicked)="selectRate($event)"></ion-product-list>
+    </div>
+  </div>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="gotoCreaterates()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
