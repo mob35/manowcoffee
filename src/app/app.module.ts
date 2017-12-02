@@ -10,6 +10,7 @@ import { MytabsPage } from '../pages/mytabs/mytabs';
 import { ProductPage } from '../pages/product/product';
 import { CartPage } from '../pages/cart/cart';
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
+import { ProductServiceProvider } from '../providers/product-service/product-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProductDetailPage } from "../pages/product-detail/product-detail";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ProductServiceProvider
   ]
 })
 export class AppModule { }
