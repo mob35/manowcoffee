@@ -1,4 +1,4 @@
-# manowcoffee
-manowcoffee
+# ManowCoffee
+ManowCoffee
 
 npm install
