@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { ProductPage } from '../product/product';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the MytabsPage tabs.
@@ -15,8 +17,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class MytabsPage {
 
-  productRoot = 'ProductPage'
-  cartRoot = 'CartPage'
+  productRoot = ProductPage;
+  cartRoot = CartPage;
 
 
   constructor(public navCtrl: NavController) {}
