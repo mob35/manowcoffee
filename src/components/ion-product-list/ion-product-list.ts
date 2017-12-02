@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the IonProductListComponent component.
@@ -12,11 +12,16 @@ import { Component, Input } from '@angular/core';
 })
 export class IonProductListComponent {
   @Input() items: any;
-
+  @Output() selected: EventEmitter<any> = new EventEmitter<any>();
+  @Output() qty: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
     console.log('Hello IonProductListComponent Component');
   }
   gotoDetail(itm) {
+    this.selected.emit(itm);
+  }
+  count(itm){
     console.log(itm);
+    // this.qty.emit(itm);
   }
 }

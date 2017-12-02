@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
 import { ProductModel } from '../product/product.model';
-
+import { ProductServiceProvider } from '../../providers/product-service/product-service';
+import { ProductDetailPage } from '../product-detail/product-detail';
 /**
  * Generated class for the ProductPage page.
  *
@@ -17,6 +18,7 @@ import { ProductModel } from '../product/product.model';
 export class ProductPage {
   product: ProductModel = new ProductModel();
   channel: number;
+  cost: string;
   steps: Array<any> = [
     {
       value: 1,
@@ -35,13 +37,31 @@ export class ProductPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public app: App,
-    public events: Events
+    public events: Events,
+    public productServiceProvider: ProductServiceProvider
   ) {
-    this.channel = 1;
+    this.cost = 'hot';
   }
-
+  ionViewWillEnter() {
+    this.getProductlist();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductPage');
+  }
+  getProductlist() {
+    this.productServiceProvider.getProduct();
+    this.productServiceProvider.getProduct().then((data) => {
+      console.log(data);
+      this.product = data;
+    }, (err) => {
+      console.log(err);
+    });
+  }
+  selectProd(e) {
+    this.navCtrl.push(ProductDetailPage, e);
+  }
+  addToCart(prod) {
+    console.log(prod);
   }
 
 }
