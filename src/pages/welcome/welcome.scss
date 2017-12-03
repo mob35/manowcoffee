@@ -1,3 +1,10 @@
 page-welcome {
-
+    .centerImg {
+        margin: 0 !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        margin-right: -50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
 }
