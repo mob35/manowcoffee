@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, Platform } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { WelcomePage } from '../welcome/welcome';
 
 /**
  * Generated class for the ScanPage page.
@@ -19,7 +20,9 @@ export class ScanPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public barcodeScanner: BarcodeScanner
+    public barcodeScanner: BarcodeScanner,
+    public app: App,
+    public platform: Platform,
   ) {
   }
 
@@ -28,12 +31,18 @@ export class ScanPage {
   }
 
   scanQr() {
-    this.barcodeScanner.scan().then((barcodeData) => {
-      // Success! Barcode data is here
-      alert(JSON.stringify(barcodeData));
-    }, (err) => {
-      // An error occurred
-    });
+    if (this.platform.is('cordova')) {
+      this.barcodeScanner.scan().then((barcodeData) => {
+        window.localStorage.setItem('table', barcodeData.text);
+        this.app.getRootNav().setRoot(WelcomePage);
+      }, (err) => {
+        // An error occurred
+      });
+    } else {
+      window.localStorage.setItem('table', 'ละมุนภัณฑ์โต๊ะที่01');
+      this.app.getRootNav().setRoot(WelcomePage);
+    }
+
   }
 
 }

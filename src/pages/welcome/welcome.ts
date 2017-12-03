@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { MytabsPage } from '../mytabs/mytabs';
 
 /**
  * Generated class for the WelcomePage page.
@@ -14,12 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  table: string = '';
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public app: App
+  ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
+  ionViewWillEnter() {
+    this.table = window.localStorage.getItem('table');
+    setTimeout(() => {
+      this.app.getRootNav().setRoot(MytabsPage);
+    }, 3000);
   }
 
 }
