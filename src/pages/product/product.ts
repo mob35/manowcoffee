@@ -19,6 +19,7 @@ export class ProductPage {
   product: ProductModel = new ProductModel();
   channel: number;
   cost: string;
+  countNum: Array<any> = [];
   steps: Array<any> = [
     {
       value: 1,
@@ -33,6 +34,7 @@ export class ProductPage {
       title: "Frappe"
     }
   ];
+  selected: Array<any> = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -61,7 +63,13 @@ export class ProductPage {
     this.navCtrl.push(ProductDetailPage, e);
   }
   addToCart(prod) {
-    console.log(prod);
+    this.selected.push(prod);
+    console.log(this.selected);
+  }
+  count(e) {
+    this.countNum.push(e);
+    window.localStorage.setItem('count', JSON.stringify(this.countNum));
+    console.log(this.countNum);
   }
 
 }

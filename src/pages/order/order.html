@@ -7,12 +7,71 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>order</ion-title>
+    <ion-title>Order</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card>
+    <ion-card-header>
+      <div text-center>
+        <img src="./assets/imgs/logo-lamoon-vecter.png" class="imgLogo">
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          รายการสั่งซื้อ
+        </ion-col>
+        <ion-col text-right>
+          โต๊ะ 01
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          มอคค่า เย็น
+        </ion-col>
+        <ion-col text-right>
+          30 บาท
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          มอคค่า เย็น
+        </ion-col>
+        <ion-col text-right>
+          30 บาท
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          มอคค่า เย็น
+        </ion-col>
+        <ion-col text-right>
+          30 บาท
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div>
+      <ion-row class="categories-title">
+        <ion-col col-7>
+          <p class="color-black-custom font-bold">รวมสุทธิ</p>
+        </ion-col>
+        <ion-col col-5 text-right>
+          <p class="color-black-custom font-bold">300 THB</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button block (click)="gotoHome()">ขอบคุณที่ใช้บริการ</button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+</ion-footer>
