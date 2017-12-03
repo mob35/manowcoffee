@@ -24,6 +24,6 @@ export class MytabsPage {
   constructor(public navCtrl: NavController) { }
   getSelectedTab() {
     
-    return parseInt(window.localStorage.getItem('tab'));
+    // return parseInt(window.localStorage.getItem('tab'));
   }
 }
