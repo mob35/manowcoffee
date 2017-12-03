@@ -53,7 +53,7 @@ export class ProductPage {
   getProductlist() {
     this.productServiceProvider.getProduct();
     this.productServiceProvider.getProduct().then((data) => {
-      console.log(data);
+      // console.log(data);
       this.product = data;
     }, (err) => {
       console.log(err);
@@ -68,8 +68,7 @@ export class ProductPage {
   }
   count(e) {
     this.countNum.push(e);
-    window.localStorage.setItem('count', JSON.stringify(this.countNum));
-    console.log(this.countNum);
+    // window.localStorage.setItem('count', JSON.stringify(this.countNum));
   }
 
 }
