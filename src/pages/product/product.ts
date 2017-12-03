@@ -68,8 +68,8 @@ export class ProductPage {
   }
   addToCart() {
     // this.selected.push(prod);
-    // window.localStorage.setItem('tab','2');
-    // this.app.getRootNav().setRoot(MytabsPage);
+    window.localStorage.setItem('tab','1');
+    this.app.getRootNav().setRoot(MytabsPage);
     this.navCtrl.push(CartPage);
   }
   count(e) {
