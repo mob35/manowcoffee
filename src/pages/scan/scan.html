@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="bbrown">
     <ion-title>Scan QR-Code</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,10 @@
 
 
 <ion-content padding>
-  <button ion-button block (click)="scanQr()">Scan QR-Code</button>
+  <div padding>
+    <img src="./assets/imgs/scan.png">
+  </div>
+  <div padding>
+    <button ion-button block (click)="scanQr()">Scan QR-Code</button>
+  </div>
 </ion-content>
