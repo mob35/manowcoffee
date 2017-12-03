@@ -55,7 +55,6 @@ export class ProductPage {
     console.log('ionViewDidLoad ProductPage');
   }
   getProductlist() {
-    this.productServiceProvider.getProduct();
     this.productServiceProvider.getProduct().then((data) => {
       // console.log(data);
       this.product = data;
@@ -68,9 +67,9 @@ export class ProductPage {
   }
   addToCart() {
     // this.selected.push(prod);
-    window.localStorage.setItem('tab','2');
+    window.localStorage.setItem('tab','1');
     this.app.getRootNav().setRoot(MytabsPage);
-    // this.navCtrl.push(CartPage, this.countNum);
+    this.navCtrl.push(CartPage);
   }
   count(e) {
     this.countNum.push(e);

@@ -17,8 +17,9 @@ import { OrderPage } from '../order/order';
 export class CartPage {
   cart: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.cart = this.navParams.data;
-    console.log(this.cart);
+    // this.cart = this.navParams.data;
+    // console.log(this.cart);
+
   }
 
   ionViewDidLoad() {
