@@ -4,6 +4,7 @@ import { ProductModel } from '../product/product.model';
 import { ProductServiceProvider } from '../../providers/product-service/product-service';
 import { ProductDetailPage } from '../product-detail/product-detail';
 import { CartServiceProvider } from '../../providers/cart-service/cart-service';
+import { CartPage } from '../cart/cart';
 /**
  * Generated class for the ProductPage page.
  *
@@ -35,7 +36,7 @@ export class ProductPage {
       title: "Frappe"
     }
   ];
-  selected: Array<any> = [];
+  // selected: Array<any> = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -64,9 +65,9 @@ export class ProductPage {
   selectProd(e) {
     this.navCtrl.push(ProductDetailPage, e);
   }
-  addToCart(prod) {
-    this.selected.push(prod);
-    console.log(this.selected);
+  addToCart() {
+    // this.selected.push(prod);
+    this.navCtrl.push(CartPage, this.countNum);
   }
   count(e) {
     this.countNum.push(e);
