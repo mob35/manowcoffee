@@ -18,6 +18,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ScanPage } from '../pages/scan/scan';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { CartServiceProvider } from '../providers/cart-service/cart-service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProductServiceProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    CartServiceProvider
   ]
 })
 export class AppModule { }
