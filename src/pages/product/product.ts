@@ -4,6 +4,7 @@ import { ProductModel } from '../product/product.model';
 import { ProductServiceProvider } from '../../providers/product-service/product-service';
 import { ProductDetailPage } from '../product-detail/product-detail';
 import { CartPage } from '../cart/cart';
+import { MytabsPage } from '../mytabs/mytabs';
 /**
  * Generated class for the ProductPage page.
  *
@@ -65,7 +66,9 @@ export class ProductPage {
   }
   addToCart() {
     // this.selected.push(prod);
-    this.navCtrl.push(CartPage, this.countNum);
+    window.localStorage.setItem('tab','2');
+    this.app.getRootNav().setRoot(MytabsPage);
+    // this.navCtrl.push(CartPage, this.countNum);
   }
   count(e) {
     this.countNum.push(e);

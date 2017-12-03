@@ -1,4 +1,4 @@
-<ion-tabs selectedIndex="0">
+<ion-tabs selectedIndex="{{getSelectedTab()}}">
     <ion-tab [root]="productRoot" tabTitle="Product" tabIcon="cube"></ion-tab>
     <ion-tab [root]="cartRoot" tabTitle="Cart" tabIcon="cart"></ion-tab>
 </ion-tabs>

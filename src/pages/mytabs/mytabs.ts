@@ -21,6 +21,9 @@ export class MytabsPage {
   cartRoot = CartPage;
 
 
-  constructor(public navCtrl: NavController) {}
-
+  constructor(public navCtrl: NavController) { }
+  getSelectedTab() {
+    
+    return parseInt(window.localStorage.getItem('tab'));
+  }
 }
