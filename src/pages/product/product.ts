@@ -55,7 +55,6 @@ export class ProductPage {
     console.log('ionViewDidLoad ProductPage');
   }
   getProductlist() {
-    this.productServiceProvider.getProduct();
     this.productServiceProvider.getProduct().then((data) => {
       // console.log(data);
       this.product = data;
