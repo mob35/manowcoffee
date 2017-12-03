@@ -1,3 +1,35 @@
 page-mytabs {
-
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: rgb(252, 246, 246);
+    }
+    .tabs-ios .tabbar {
+        background: rgb(252, 246, 246);
+    }
+    .tabs-ios .tab-button[aria-selected=true] {
+        background-color: #854836;
+        color: #f4f4f4;
+    }
+    .tabs-ios .tab-button-icon {
+        color: #854836;;
+    }
+    .tabs-ios .tab-button {
+        color: #854836;;
+    }
+    /////////////////////////////////////////////////
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: rgb(252, 246, 246);
+    }
+    .tabs-md .tabbar {
+        background: rgb(252, 246, 246);
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        background-color: #854836;
+        color: #f4f4f4;
+    }
+    .tabs-md .tab-button-icon {
+        color: #854836;
+    }
+    .tabs-md .tab-button {
+        color: #854836;
+    }
 }

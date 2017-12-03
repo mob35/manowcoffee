@@ -15,8 +15,10 @@ import { OrderPage } from '../order/order';
   templateUrl: 'cart.html',
 })
 export class CartPage {
-
+  cart: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cart = this.navParams.data;
+    console.log(this.cart);
   }
 
   ionViewDidLoad() {
