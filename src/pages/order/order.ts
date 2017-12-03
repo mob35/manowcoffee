@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { MytabsPage } from '../mytabs/mytabs';
 
 /**
  * Generated class for the OrderPage page.
@@ -15,13 +16,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OrderPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public app: App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPage');
   }
   gotoHome(){
-    this.navCtrl.popToRoot();
+    this.app.getRootNav().setRoot(MytabsPage);
   }
 }
