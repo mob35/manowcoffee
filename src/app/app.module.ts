@@ -19,6 +19,7 @@ import { ScanPage } from '../pages/scan/scan';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { CartServiceProvider } from '../providers/cart-service/cart-service';
+import { BarcodeServiceProvider } from '../providers/barcode-service/barcode-service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CartServiceProvider } from '../providers/cart-service/cart-service';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProductServiceProvider,
     BarcodeScanner,
-    CartServiceProvider
+    CartServiceProvider,
+    BarcodeServiceProvider,
   ]
 })
 export class AppModule { }
