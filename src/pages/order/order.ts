@@ -21,5 +21,7 @@ export class OrderPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPage');
   }
-
+  gotoHome(){
+    this.navCtrl.popToRoot();
+  }
 }
