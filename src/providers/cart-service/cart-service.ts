@@ -52,7 +52,7 @@ export class CartServiceProvider {
         amount: product.price
       });
     }
-    window.localStorage.setItem('cart', JSON.stringify(cart));    
+    window.localStorage.setItem('cart', JSON.stringify(cart));
     return this.calculate();
   }
 
@@ -60,23 +60,32 @@ export class CartServiceProvider {
     var cart = this.getCart();
     cart.items[i].qty += 1;
     cart.items[i].amount = cart.items[i].qty * cart.items[i].price;
-    window.localStorage.setItem('cart', JSON.stringify(cart));    
+    window.localStorage.setItem('cart', JSON.stringify(cart));
     return this.calculate();
   }
 
   removeQty(i) {
     var cart = this.getCart();
-    cart.items[i].qty -= 1;
-    cart.items[i].amount = cart.items[i].qty * cart.items[i].price;
-    window.localStorage.setItem('cart', JSON.stringify(cart));    
-    return this.calculate(); 
+    // console.log(cart.items[i].qty);
+    if (cart.items[i].qty > 1) {
+      cart.items[i].qty -= 1;
+      cart.items[i].amount = cart.items[i].qty * cart.items[i].price;
+      window.localStorage.setItem('cart', JSON.stringify(cart));
+      return this.calculate();
+    } else {
+      alert('ไม่สามารถลดจำนวนสินค้าได้อีก');
+      cart.items[i].amount = cart.items[i].qty * cart.items[i].price;
+      window.localStorage.setItem('cart', JSON.stringify(cart));
+      return this.calculate();
+    }
+
   }
 
   removeItem(i) {
     var cart = this.getCart();
     cart.items.splice(i, 1);
-    window.localStorage.setItem('cart', JSON.stringify(cart));    
-    return this.calculate();      
+    window.localStorage.setItem('cart', JSON.stringify(cart));
+    return this.calculate();
   }
 
   calculate() {
@@ -94,6 +103,12 @@ export class CartServiceProvider {
   getCart() {
     var cart = window.localStorage.getItem('cart') ? JSON.parse(window.localStorage.getItem('cart')) : {};
     return cart;
+  }
+  clearCart() {
+    var cart = this.getCart();
+    cart.items = [];
+    window.localStorage.setItem('cart', JSON.stringify(cart));
+    return this.calculate();
   }
 
 }
