@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular'
 import { ProductModel } from '../product/product.model';
 import { ProductServiceProvider } from '../../providers/product-service/product-service';
 import { ProductDetailPage } from '../product-detail/product-detail';
+import { CartServiceProvider } from '../../providers/cart-service/cart-service';
 /**
  * Generated class for the ProductPage page.
  *
@@ -40,7 +41,8 @@ export class ProductPage {
     public navParams: NavParams,
     public app: App,
     public events: Events,
-    public productServiceProvider: ProductServiceProvider
+    public productServiceProvider: ProductServiceProvider,
+    public cartService: CartServiceProvider
   ) {
     this.cost = 'hot';
   }
@@ -68,6 +70,8 @@ export class ProductPage {
   }
   count(e) {
     this.countNum.push(e);
+    console.log(this.cartService.addTocart(e));
+
     // window.localStorage.setItem('count', JSON.stringify(this.countNum));
   }
 
