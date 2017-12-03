@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="bbrown">
     <ion-title>cart</ion-title>
   </ion-navbar>
 
@@ -29,7 +29,7 @@
               <button ion-button icon-only small id="cartDecrease" (click)="decrease(item)">
                 <ion-icon name="remove"></ion-icon>
               </button>
-              <label class="count">{{0}}</label>
+              <label class="count">{{item.qty}}</label>
               <button ion-button icon-only small id="cartIncrease" (click)="increase(item)">
                 <ion-icon name="add"></ion-icon>
               </button>
@@ -50,7 +50,7 @@
           <p class="color-black-custom font-bold">รวมสุทธิ</p>
         </ion-col>
         <ion-col col-5 text-right>
-          <p class="color-black-custom font-bold">300 THB</p>
+          <p class="color-black-custom font-bold">{{cart.total}} THB</p>
         </ion-col>
       </ion-row>
       <ion-row>
