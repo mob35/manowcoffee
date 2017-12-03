@@ -23,6 +23,7 @@ export class ProductPage {
   channel: number;
   cost: string;
   countNum: Array<any> = [];
+  qty: 0;
   steps: Array<any> = [
     {
       value: 1,
@@ -49,7 +50,13 @@ export class ProductPage {
     this.cost = 'hot';
   }
   ionViewWillEnter() {
+    this.qty = 0;
     this.getProductlist();
+    this.countNum = this.cartService.getCart().items;
+    this.countNum.forEach(item => {
+      this.qty += item.qty;
+    });
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductPage');
@@ -67,13 +74,17 @@ export class ProductPage {
   }
   addToCart() {
     // this.selected.push(prod);
-    window.localStorage.setItem('tab','1');
+    window.localStorage.setItem('tab', '1');
     this.app.getRootNav().setRoot(MytabsPage);
     this.navCtrl.push(CartPage);
   }
   count(e) {
-    this.countNum.push(e);
+    this.qty = 0;
     console.log(this.cartService.addTocart(e));
+    this.countNum = this.cartService.getCart().items;
+    this.countNum.forEach(item => {
+      this.qty += item.qty;
+    });
 
     // window.localStorage.setItem('count', JSON.stringify(this.countNum));
   }

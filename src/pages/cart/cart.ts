@@ -32,4 +32,16 @@ export class CartPage {
   gotoOrder() {
     this.navCtrl.push(OrderPage)
   }
+  dissCart(){
+    this.cart = this.cartServiceProvider.clearCart();
+  }
+  removeItem(i){
+    this.cart = this.cartServiceProvider.removeItem(i);
+  }
+  decrease(i){
+    this.cart = this.cartServiceProvider.removeQty(i);
+  }
+  increase(i){
+    this.cart = this.cartServiceProvider.addQty(i);
+  }
 }
