@@ -13,6 +13,7 @@ import { ProductDetailPage } from "../pages/product-detail/product-detail";
 import { ProductServiceProvider } from '../providers/product-service/product-service';
 import { IonProductListComponent } from '../components/ion-product-list/ion-product-list';
 import { HttpModule } from '@angular/http';
+import { OrderPage } from "../pages/order/order";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpModule } from '@angular/http';
     ProductPage,
     CartPage,
     ProductDetailPage,
-    IonProductListComponent
+    IonProductListComponent,
+    OrderPage
     
   ],
   imports: [
@@ -40,7 +42,8 @@ import { HttpModule } from '@angular/http';
     MytabsPage,
     ProductPage,
     CartPage,
-    ProductDetailPage
+    ProductDetailPage,
+    OrderPage
   ],
   providers: [
     StatusBar,
