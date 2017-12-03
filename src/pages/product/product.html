@@ -28,17 +28,17 @@
     
       <div [ngSwitch]="cost">
         <div *ngSwitchCase="'hot'">
-          <ion-product-list [items]="product.hot" (selected)="selectProd($event)"></ion-product-list>
+          <ion-product-list [items]="product.hot" (selected)="selectProd($event)" (addcart)="count($event)"></ion-product-list>
         </div>
         <div *ngSwitchCase="'iced'">
-          <ion-product-list [items]="product.iced" (selected)="selectProd($event)"></ion-product-list>
+          <ion-product-list [items]="product.iced" (selected)="selectProd($event)" (addcart)="count($event)"></ion-product-list>
         </div>
         <div *ngSwitchCase="'frappe'">
-          <ion-product-list [items]="product.frappe" (selected)="selectProd($event)"></ion-product-list>
+          <ion-product-list [items]="product.frappe" (selected)="selectProd($event)" (addcart)="count($event)"></ion-product-list>
         </div>
       </div>
 
 </ion-content>
 <ion-footer>
-    <button ion-button block color="danger" (click)="addToCart(product)">Add Cart</button>
+    <button ion-button block color="danger" (click)="addToCart(product)">Add Cart {{this.countNum.length}}</button>
   </ion-footer>

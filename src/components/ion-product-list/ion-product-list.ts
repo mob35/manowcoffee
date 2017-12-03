@@ -11,17 +11,32 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: 'ion-product-list.html'
 })
 export class IonProductListComponent {
+  cart = {
+    _id: '',
+    name: '',
+    image: '',
+    size: '',
+    price: 0
+  };
   @Input() items: any;
   @Output() selected: EventEmitter<any> = new EventEmitter<any>();
-  @Output() qty: EventEmitter<any> = new EventEmitter<any>();
+  @Output() addcart: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
     console.log('Hello IonProductListComponent Component');
   }
   gotoDetail(itm) {
     this.selected.emit(itm);
   }
-  count(itm){
-    console.log(itm);
-    // this.qty.emit(itm);
+  count(item, itm) {
+    this.cart = {
+      _id: item._id,
+      name: item.name,
+      image: item.image,
+      size: itm.name,
+      price: itm.price
+    }
+
+    // console.log(this.cart);
+    this.addcart.emit(this.cart);
   }
 }
