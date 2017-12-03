@@ -14,6 +14,10 @@ import { ProductServiceProvider } from '../providers/product-service/product-ser
 import { IonProductListComponent } from '../components/ion-product-list/ion-product-list';
 import { HttpModule } from '@angular/http';
 import { OrderPage } from "../pages/order/order";
+import { WelcomePage } from '../pages/welcome/welcome';
+import { ScanPage } from '../pages/scan/scan';
+
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { OrderPage } from "../pages/order/order";
     CartPage,
     ProductDetailPage,
     IonProductListComponent,
-    OrderPage
+    OrderPage,
+    WelcomePage,
+    ScanPage
     
   ],
   imports: [
@@ -43,14 +49,16 @@ import { OrderPage } from "../pages/order/order";
     ProductPage,
     CartPage,
     ProductDetailPage,
-    OrderPage
+    OrderPage,
+    WelcomePage,
+    ScanPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProductServiceProvider,
-    
+    BarcodeScanner
   ]
 })
 export class AppModule { }
